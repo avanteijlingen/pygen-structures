@@ -327,9 +327,9 @@ class CHARMMResidue(CHARMMResidueData):
                 first_char = raw_atom_name[1]
                 raw_atom_name = raw_atom_name[1:]
 
-            if first_char not in ('-', '+'):
+            if first_char not in ("-", "+"):
                 residue_index = index
-            elif first_char == '-':
+            elif first_char == "-":
                 residue_index = last_index
                 raw_atom_name = raw_atom_name[1:]
             else:
@@ -948,12 +948,12 @@ class CHARMMParameterFile:
                 contents = re.findall("(?smi)(^READ PARA.*?^END)", contents)[0]
             except IndexError:
                 return
-        contents = contents.split('\n')
+        contents = contents.split("\n")
         headings = ("BOND", "ANGL", "DIHE", "IMPR", "CMAP", "NONB", "CUTN")
         section_heading = None
 
         for line in contents:
-            line = line.split('!')[0].rstrip().upper()
+            line = line.split("!")[0].rstrip().upper()
             if not line:
                 continue
             if line[:4] in headings:
@@ -1058,11 +1058,11 @@ class CHARMMParameterFile:
             else:
                 unmatched_impropers.add(improper)
         unmatched = {
-            'bonds': unmatched_bonds,
-            'angles': unmatched_angles,
-            'dihedrals': unmatched_dihedrals,
-            'impropers': unmatched_impropers,
-            'cross_maps': unmatched_cross_maps,
+            "bonds": unmatched_bonds,
+            "angles": unmatched_angles,
+            "dihedrals": unmatched_dihedrals,
+            "impropers": unmatched_impropers,
+            "cross_maps": unmatched_cross_maps,
         }
         return unmatched
 
