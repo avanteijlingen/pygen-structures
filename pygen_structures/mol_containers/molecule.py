@@ -156,6 +156,7 @@ class Molecule:
                     atom_name=atom_name,
                     residue_name=residue.name,
                     residue_number=residue.index + 1,
+                    chain="A",
                     segment_id=self.segment,
                     atom_type=atom_type,
                     partial_charge=charge,
